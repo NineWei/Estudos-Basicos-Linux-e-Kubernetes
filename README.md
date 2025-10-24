@@ -47,6 +47,22 @@ cat arquivo.txt
 less arquivo.txt
 ```
 
+**MV** Move ou renomeia arquivos.
+```bash
+mv arquivo_antigo.txt arquivo_novo.txt
+```
+Exemplo: 
+```bash
+mv Untitled.sql prometheus.lock.remove.yaml
+```
+
+**NANO** Abre o editor de texto no terminal.
+```bash
+nano arquivo.txt
+```
+
+⚠️ Cuidado ao editar arquivos de configuração com nano — salve com Ctrl + O e saia com Ctrl + X.
+
 ---
 
 ### ⚙️ Sistema e processos
@@ -75,6 +91,12 @@ free -h
 ```bash
 df -h
 ```
+
+**GREP** Filtra resultados em uma lista.
+```bash
+kubectl get pods -A | grep prometheus
+```
+É muito usado para encontrar linhas específicas em saídas de comandos.
 
 ---
 
@@ -129,6 +151,20 @@ Ver logs de um pod com múltiplos containers:
 kubectl logs <nome-do-pod> -c <nome-do-container> -n <namespace>
 ```
 
+---
+
+### Aplicação e criação de recursos
+
+Aplicar um arquivo YAML
+```bash
+kubectl apply -f arquivo.yaml
+```
+
+Exemplo:
+```bash
+kubectl apply -f prometheus.lock.remove.yaml
+```
+
 ### Acesso ao pod
 
 Entrar no shell do pod:
@@ -137,7 +173,47 @@ kubectl exec -it <nome-do-pod> -n <namespace> -- /bin/bash
 ```
 
 ⚠️ Cuidado: Use este comando apenas para consultar ou inspecionar.
-Evite alterar configurações dentro do pod em ambiente de trabalho.
+Evite alterar configurações dentro do pod.
+
+---
+
+### Helm
+
+Listar releases do Helm
+```bash
+helm list -A
+```
+
+Filtrar releases específicas
+```bash
+helm list -A | grep homer
+```
+
+O grep ajuda a buscar apenas o nome desejado dentro da lista.
+
+---
+
+### Instalação de ferramentas
+
+Esses comandos são usados para instalar utilitários no Linux.
+
+⚠️ Use com cautela, pois eles modificam o sistema.
+
+Instalar o K9s
+```bash
+curl -sS https://webinstall.dev/k9s | bash
+```
+
+Instalar pacotes com apt
+```bash
+sudo apt update
+sudo apt install <nome-do-pacote>
+```
+
+Instalar o Helm via Snap
+```bash
+sudo snap install helm --classic
+```
 
 ---
 

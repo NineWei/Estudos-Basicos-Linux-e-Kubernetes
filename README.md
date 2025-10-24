@@ -154,25 +154,27 @@ k9s
 **Sair** do K9s:
 ```bash
 :q
-ou
+```
+Ou
+```bash
 Ctrl + C
 ```
 
 ### Navegação (K9s)
 
-Buscar recurso:	/
-Ver pods:	po
-Ver deployments:	d
-Ver namespaces:	:ns
-Mudar contexto:	:ctx
-Filtrar resultados:	/texto
-Atualizar tela:	Ctrl + R
-Voltar:	Esc
+Buscar recurso:	/   
+Ver pods:	po   
+Ver deployments:	d   
+Ver namespaces:	:ns   
+Mudar contexto:	:ctx   
+Filtrar resultados:	/texto   
+Atualizar tela:	Ctrl + R   
+Voltar:	Esc   
 
 ### Ações úteis (K9s)
 
-Ver logs do pod selecionado:	l
-Entrar no shell do container:	s
+Ver logs do pod selecionado:	l   
+Entrar no shell do container:	s   
 Descrever recurso selecionado:	Shift + d
 Ver detalhes do container:	Enter
 Ver eventos do namespace atual:	0
